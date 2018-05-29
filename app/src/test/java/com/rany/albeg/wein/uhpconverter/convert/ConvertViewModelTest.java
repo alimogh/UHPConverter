@@ -64,7 +64,7 @@ public class ConvertViewModelTest {
 
         mViewModel.conversion().observeForever(mConversionResultObserver);
 
-        mViewModel.onClickConvert("USD", "HRK");
+        mViewModel.onClickConvert(1,"USD", "HRK");
 
         mTestScheduler.triggerActions();
 
@@ -82,7 +82,7 @@ public class ConvertViewModelTest {
 
         mViewModel.conversion().observeForever(mConversionResultObserver);
 
-        mViewModel.onClickConvert("USD", "HRK");
+        mViewModel.onClickConvert(1,"USD", "HRK");
 
         ConversionResult conversionResult = Objects.requireNonNull(mViewModel.conversion().getValue());
 
@@ -96,7 +96,7 @@ public class ConvertViewModelTest {
 
         mViewModel.conversion().observeForever(mConversionResultObserver);
 
-        mViewModel.onClickConvert("USD", "HRK");
+        mViewModel.onClickConvert(1,"USD", "HRK");
         mTestScheduler.triggerActions();
 
         ConversionResult conversionResult = Objects.requireNonNull(mViewModel.conversion().getValue());

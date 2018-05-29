@@ -44,6 +44,15 @@
         android:padding="10dp"
         android:text="@string/convert"/>
 
+    <EditText
+        android:id="@+id/et_unit"
+        android:padding="15dp"
+        android:inputType="numberSigned"
+        android:hint="@string/insert_unit_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bt_convert"/>
+
     <TextView
         android:id="@+id/tv_selling_rate"
         android:layout_width="wrap_content"

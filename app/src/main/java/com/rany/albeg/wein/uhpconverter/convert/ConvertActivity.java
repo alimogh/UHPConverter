@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,6 +33,8 @@ public class ConvertActivity extends AppCompatActivity {
     SmarterSpinner mCurrencyCodeFrom;
     @BindView(R.id.sp_to)
     SmarterSpinner mCurrencyCodeTo;
+    @BindView(R.id.et_unit)
+    EditText mUnit;
     @BindView(R.id.pb_loading)
     ProgressBar mLoading;
 
@@ -145,6 +148,8 @@ public class ConvertActivity extends AppCompatActivity {
         String ccFrom = mCurrencyCodeFrom.getSelectedItem().toString();
         String ccTo = mCurrencyCodeTo.getSelectedItem().toString();
 
-        mViewModel.onClickConvert(1, ccFrom, ccTo);
+        String s = mUnit.getText().toString();
+
+        mViewModel.onClickConvert(s.isEmpty() ? 1 : Integer.valueOf(s), ccFrom, ccTo);
     }
 }
