@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="base_currency_hrk">HRK</string>
+
+
+    <string-array name="currency_codes">
+        <item>@string/base_currency_hrk</item>
+        <item>USD</item>
+        <item>EUR</item>
+        <item>AUD</item>
+        <item>CAD</item>
+        <item>CZK</item>
+        <item>DKK</item>
+        <item>HUF</item>
+        <item>NOK</item>
+        <item>SEK</item>
+        <item>BAM</item>
+        <item>PLN</item>
+    </string-array>
+</resources>

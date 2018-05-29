@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+
+project.ext {
+    supportLibVersion = "27.1.1"
+    daggerVersion = "2.13"
+    butterKnifeVersion = "8.8.1"
+    rxJavaVersion = "2.1.0"
+    rxAndroidVersion = "2.0.1"
+    timberVersion = "4.6.0"
+    lifecycleVersion = "1.1.1"
+    retrofitVersion = "2.4.0"
+    mockitoVersion = "2.7.1"
+    junitVersion = "4.12"
+}
+
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.rany.albeg.wein.uhpconverter"
+        minSdkVersion 22
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // Support
+    implementation "com.android.support:appcompat-v7:$project.supportLibVersion"
+
+    // ButterKnife
+    implementation "com.jakewharton:butterknife:$project.butterKnifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$project.butterKnifeVersion"
+    // ReactiveX
+    implementation "io.reactivex.rxjava2:rxjava:$project.rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$project.rxAndroidVersion"
+    // Lifecycle
+    implementation "android.arch.lifecycle:runtime:$project.lifecycleVersion"
+    implementation "android.arch.lifecycle:extensions:$project.lifecycleVersion"
+    implementation "android.arch.lifecycle:reactivestreams:$project.lifecycleVersion"
+    annotationProcessor "android.arch.lifecycle:compiler:$project.lifecycleVersion"
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$project.retrofitVersion"
+    // Retrofit RxJava2 Adapter
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$project.retrofitVersion"
+    // Gson
+    implementation "com.squareup.retrofit2:converter-gson:$project.retrofitVersion"
+    // Dagger core
+    annotationProcessor "com.google.dagger:dagger-compiler:$project.daggerVersion"
+    implementation "com.google.dagger:dagger:$project.daggerVersion"
+    // Dagger Android
+    annotationProcessor "com.google.dagger:dagger-android-processor:$project.daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$project.daggerVersion"
+    // Testing
+    testImplementation "junit:junit:$project.junitVersion"
+    testImplementation "org.mockito:mockito-core:$project.mockitoVersion"
+    testImplementation "android.arch.core:core-testing:1.1.1"
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
